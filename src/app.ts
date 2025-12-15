@@ -4,10 +4,10 @@ import { fetchOrders } from "./http/routes/fetch-orders";
 import { syncInventoryBatches } from "./http/routes/sync-inventory-batches";
 
 const app = new Elysia()
-  .get("/", () => "Hello Elysia")
-  .use(addSales)
-  .use(fetchOrders)
-  .use(syncInventoryBatches);
+	.get("/", () => "Hello Elysia")
+	.use(addSales)
+	.use(fetchOrders)
+	.use(syncInventoryBatches);
 
 export type App = typeof app;
 

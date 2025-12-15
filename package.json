@@ -1,32 +1,33 @@
 {
-  "name": "server",
-  "version": "1.0.50",
-  "module": "src/server.ts",
-  "type": "module",
-  "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
-    "dev": "bun run --watch src/app.ts",
-    "prebuild": "turbo run build --filter=@yuubot45/ggmax-sales-parser",
-    "build:bun": "bun build src/server.ts --outdir dist",
-    "build": "tsup",
-    "start": "bun run dist/server.js",
-    "db:generate": "dotenvx run -f .env.local -- bunx drizzle-kit generate",
-    "db:migrate": "dotenvx run -f .env.local -- bunx drizzle-kit migrate",
-    "db:push": "dotenvx run -f .env.local -- bunx drizzle-kit push"
-  },
-  "dependencies": {
-    "@dotenvx/dotenvx": "^1.51.1",
-    "@neondatabase/serverless": "^1.0.2",
-    "@yuubot45/ggmax-sales-parser": "workspace:*",
-    "dotenv": "^17.2.3",
-    "drizzle-orm": "^0.45.1",
-    "elysia": "latest",
-    "pg": "^8.16.3",
-    "zod": "^4.1.13"
-  },
-  "devDependencies": {
-    "@types/pg": "^8.15.6",
-    "bun-types": "latest",
-    "drizzle-kit": "^0.31.8"
-  }
+	"name": "yuu-store-server",
+	"version": "1.0.50",
+	"module": "src/app.ts",
+	"type": "module",
+	"scripts": {
+		"start": "bun run dist/app.js",
+		"dev": "bun run --watch src/app.ts",
+		"build:bun": "bun build src/app.ts --outdir dist",
+		"build": "tsup",
+
+		"test": "echo \"Error: no test specified\" && exit 1",
+
+		"db:generate": "dotenvx run -f .env.local -- bunx drizzle-kit generate",
+		"db:migrate": "dotenvx run -f .env.local -- bunx drizzle-kit migrate",
+		"db:push": "dotenvx run -f .env.local -- bunx drizzle-kit push"
+	},
+	"dependencies": {
+		"@dotenvx/dotenvx": "^1.51.1",
+		"@neondatabase/serverless": "^1.0.2",
+		"@yuubot45/ggmax-sales-parser": "latest",
+		"dotenv": "^17.2.3",
+		"drizzle-orm": "^0.45.1",
+		"elysia": "latest",
+		"pg": "^8.16.3",
+		"zod": "^4.1.13"
+	},
+	"devDependencies": {
+		"@types/pg": "^8.15.6",
+		"bun-types": "latest",
+		"drizzle-kit": "^0.31.8"
+	}
 }
