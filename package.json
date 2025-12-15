@@ -8,9 +8,7 @@
 		"dev": "bun run --watch src/app.ts",
 		"build:bun": "bun build src/app.ts --outdir dist",
 		"build": "tsup",
-
 		"test": "echo \"Error: no test specified\" && exit 1",
-
 		"db:generate": "dotenvx run -f .env.local -- bunx drizzle-kit generate",
 		"db:migrate": "dotenvx run -f .env.local -- bunx drizzle-kit migrate",
 		"db:push": "dotenvx run -f .env.local -- bunx drizzle-kit push"
@@ -28,6 +26,7 @@
 	"devDependencies": {
 		"@types/pg": "^8.15.6",
 		"bun-types": "latest",
-		"drizzle-kit": "^0.31.8"
+		"drizzle-kit": "^0.31.8",
+		"tsup": "^8.5.1"
 	}
 }
